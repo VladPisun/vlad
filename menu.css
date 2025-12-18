@@ -1,0 +1,270 @@
+body {
+    background-image: url("bin/menu.png");
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding-top: 200px;
+    box-sizing: border-box;
+}
+
+/* Кнопки и логотип - фиксируем размер и расстояние */
+.log {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px; 
+  height: auto;
+  z-index: 10;
+}
+
+.foto, .shorts, .ist {
+  position: absolute;
+  left: 20px;
+  width: 220px; 
+  height: auto;
+  z-index: 10;
+}
+
+.foto {
+  top: 60px;
+}
+
+.shorts {
+  top: 102px; /* Расстояние 42px между кнопками */
+}
+
+.ist {
+  top: 144px; /* Расстояние 42px между кнопками */
+}
+
+.container {
+  display: flex;                
+  justify-content: center;      
+  align-items: center;          
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}      
+
+.img1, .img2, .img3, .img4, .img5 {
+  height: 300px;
+  width: auto;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Для больших планшетов и маленьких ноутбуков */
+@media (max-width: 1200px) {
+  body {
+    padding-top: 180px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 250px;
+  }
+}
+
+/* Для планшетов */
+@media (max-width: 900px) {
+  body {
+    padding-top: 160px;
+  }
+  
+  /* Кнопки остаются почти того же размера */
+  .foto, .shorts, .ist {
+    width: 200px; /* Почти не уменьшаем */
+    left: 15px;
+  }
+  
+  .foto {
+    top: 55px;
+  }
+  
+  .shorts {
+    top: 102px; /* Сохраняем то же расстояние 47px */
+  }
+  
+  .ist {
+    top: 149px; /* Сохраняем то же расстояние 47px */
+  }
+  
+  .log {
+    width: 110px; /* Почти не уменьшаем */
+    left: 15px;
+  }
+  
+  .container {
+    gap: 15px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 220px;
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  body {
+    padding-top: 170px; /* Немного увеличиваем для больших кнопок */
+  }
+  
+  /* Делаем кнопки вертикальным блоком для экономии места */
+  .foto, .shorts, .ist {
+    width: 180px;
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+  }
+  
+  .foto {
+    top: 60px;
+  }
+  
+  .shorts {
+    top: 110px; /* Увеличиваем расстояние до 50px */
+  }
+  
+  .ist {
+    top: 160px; /* Увеличиваем расстояние до 50px */
+  }
+  
+  .log {
+    width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px;
+  }
+  
+  .container {
+    gap: 15px;
+    padding: 10px;
+    justify-content: space-around;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 200px;
+    flex: 0 0 auto;
+  }
+}
+
+/* Для маленьких мобильных */
+@media (max-width: 480px) {
+  body {
+    padding-top: 180px; /* Еще увеличиваем для кнопок */
+  }
+  
+  .foto, .shorts, .ist {
+    width: 160px; /* Минимальный размер для читаемости */
+  }
+  
+  .foto {
+    top: 65px;
+  }
+  
+  .shorts {
+    top: 120px; /* Расстояние 55px */
+  }
+  
+  .ist {
+    top: 175px; /* Расстояние 55px */
+  }
+  
+  .log {
+    width: 90px;
+    top: 20px;
+  }
+  
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 220px;
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* Для очень маленьких экранов (например, iPhone SE) */
+@media (max-width: 375px) {
+  body {
+    padding-top: 190px;
+  }
+  
+  .foto, .shorts, .ist {
+    width: 150px; /* Абсолютный минимум */
+  }
+  
+  .foto {
+    top: 70px;
+  }
+  
+  .shorts {
+    top: 130px; /* Расстояние 60px */
+  }
+  
+  .ist {
+    top: 190px; /* Расстояние 60px */
+  }
+  
+  .log {
+    width: 80px;
+  }
+}
+
+/* Для высоких экранов */
+@media (min-height: 1000px) {
+  body {
+    padding-top: 250px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 350px;
+  }
+}
+
+/* Для очень низких экранов */
+@media (max-height: 600px) {
+  body {
+    padding-top: 160px; /* Уменьшаем немного для низких экранов */
+  }
+  
+  .foto, .shorts, .ist {
+    width: 150px; /* Уменьшаем кнопки только на низких экранах */
+  }
+  
+  .foto {
+    top: 50px;
+  }
+  
+  .shorts {
+    top: 100px; /* Расстояние 50px */
+  }
+  
+  .ist {
+    top: 150px; /* Расстояние 50px */
+  }
+  
+  .log {
+    width: 80px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 180px;
+  }
+}
